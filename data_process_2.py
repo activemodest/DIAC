@@ -465,9 +465,9 @@ def get_the_final_data_5(dev_samples=-5000):
 
 if __name__ == "__main__":
     """调用以下不同函数，可以获得不同格式的数据集，具体内容可查看每个函数的注释"""
-    get_the_final_data_3()
+    # get_the_final_data_3()
     # get_the_final_data_2()
-    # get_the_final_data_4()
+    get_the_final_data_4()
     # get_the_final_data_5()
 
 

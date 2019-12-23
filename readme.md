@@ -2,7 +2,7 @@
 
 基于Adversarial Attack的问题等价性判别比赛][https://www.biendata.com/competition/2019diac/]
 
-对主办方提供的数据集进行增强，增强的途径主要有以下两种：
+首先，对主办方提供的数据集进行增强，增强的途径主要有以下两种：
 
 ### 一. 生成对抗样本，提升模型的鲁棒性  
 
@@ -70,5 +70,22 @@ Idea:通过相同词和不同词汇提升模型的预测能力
 
 "n", "nb", "nba", "nbc", "nbp", "nf", "ng", "nh", "nhd", "nhm", "ni", "nic", "nis", "nit", "nl", "nm","nmc", "nnd", "nnt","nr", "nr1", "nr2", "nrf", "nri", "ns", "nsf", "nt", "ntc", "ntcb", "ntcf", "ntch","nth", "nto","nts", "ntu", "nx", "nz", "rr","r","rz"
 
+
+
+我们还统计了训练集中出现的一些不影响问题等价性判断的成分，如请问、谢谢了、问一下等，这些词汇存储在otherwords.txt中，使用方法可参考tongji.py中的re_replace()
+
+
+
 ## 运行代码：
+
+根据生成数据集的格式不同，调用不同的生成函数
+
+```shell
+python data_process_2.py
+```
+
+```python
+# 获得最终版本的数据,数据格式为[q11,q21,q12,q22,q31,label],并从原始训练集里切5000条数据作为测试集数据增强加到了10000条q12:q1中与q2不同的词汇q22:q2中与q1不同的词汇q31:q1与q2相同的词汇。
+# 并且对10%的正样本进行近义词替换/同音字替换
+```
 
